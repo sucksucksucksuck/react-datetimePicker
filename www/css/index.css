@@ -1,0 +1,123 @@
+.calendar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 224px;
+  font-size: 12px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: default;
+}
+.calendar.week {
+  width: 256px;
+}
+.calendar > div,
+.calendar span {
+  width: 32px;
+  text-align: center;
+  color: #999;
+}
+.calendar > div.week-head,
+.calendar span.week-head {
+  background-color: #31b4e1;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: bold;
+}
+.calendar > div.day-head,
+.calendar span.day-head {
+  background-color: #31b4e1;
+  height: 25px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: bold;
+}
+.calendar > div.week-item,
+.calendar span.week-item {
+  height: 32px;
+  line-height: 32px;
+}
+.calendar > div.week-item.non,
+.calendar span.week-item.non {
+  color: #ddd;
+}
+.calendar > div.week-item.current,
+.calendar span.week-item.current {
+  color: #333;
+}
+.calendar > div.day-item,
+.calendar span.day-item {
+  cursor: pointer;
+  height: 32px;
+  line-height: 32px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.calendar > div.day-item > div,
+.calendar span.day-item > div {
+  border-radius: 50%;
+}
+.calendar > div.day-item.non,
+.calendar span.day-item.non {
+  color: #ddd;
+}
+.calendar > div.day-item.current,
+.calendar span.day-item.current {
+  color: #333;
+}
+.calendar > div.day-item:hover > div,
+.calendar span.day-item:hover > div {
+  line-height: 22.4px;
+  height: 22.4px;
+  width: 22.4px;
+  background-color: #D8EDFF;
+}
+.calendar > div.day-item.active > div,
+.calendar span.day-item.active > div {
+  line-height: 25.6px !important;
+  height: 25.6px !important;
+  width: 25.6px !important;
+  background-color: #31b4e1 !important;
+}
+.calendar > span {
+  background-image: url("../image/date-join.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  color: #fff;
+}
+.calendar > span.head:first-of-type {
+  background-size: 50% 100%;
+  background-position: 100% 0;
+}
+.calendar > span.head:first-of-type > div {
+  line-height: 22.4px;
+  height: 22.4px;
+  width: 22.4px;
+  background-color: #D8EDFF;
+}
+.calendar > span.head:last-of-type {
+  background-size: 50% 100%;
+  background-position: 0 0;
+}
+.calendar > span.head:last-of-type:first-of-type {
+  background-image: none;
+}
+.calendar > span.head:last-of-type > div {
+  line-height: 22.4px;
+  height: 22.4px;
+  width: 22.4px;
+  background-color: #D8EDFF;
+}
+.multi {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 5px;
+}

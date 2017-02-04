@@ -1,0 +1,119 @@
+.calendar {
+  @itemWidth: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  width: @itemWidth * 7;
+  font-size: 12px;
+  //border-bottom: #eee solid 1px;
+  //border-right: #eee solid 1px;
+  user-select: none;
+  cursor: default;
+  &.week {
+    width: @itemWidth * 8;
+  }
+  > div, span {
+    width: @itemWidth;
+    text-align: center;
+    //border-top: #eee solid 1px;
+    //border-left: #eee solid 1px;
+    color: #999;
+    &.week-head {
+      background-color: #31b4e1;
+      height: 25px;
+      line-height: 25px;
+      color: #fff;
+      font-weight: bold;
+    }
+    &.day-head {
+      background-color: #31b4e1;
+      height: 25px;
+      line-height: 25px;
+      color: #fff;
+      font-weight: bold;
+    }
+    &.week-item {
+      height: @itemWidth;
+      line-height: @itemWidth;
+      &.non {
+        color: #ddd;
+      }
+      &.current {
+         color: #333;
+      }
+    }
+    &.day-item {
+      cursor: pointer;
+      height: @itemWidth;
+      line-height: @itemWidth;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      > div {
+        border-radius: 50%;
+      }
+      &.non {
+        color: #ddd;
+      }
+      &.current {
+        color: #333;
+      }
+      &:hover {
+        > div {
+          line-height: @itemWidth * 0.7;
+          height: @itemWidth * 0.7;
+          width: @itemWidth * 0.7;
+          background-color: #D8EDFF;
+        }
+      }
+      &.active {
+        > div {
+          line-height: @itemWidth * 0.8 !important;
+          height: @itemWidth * 0.8 !important;
+          width: @itemWidth * 0.8 !important;
+          background-color: #31b4e1 !important;
+        }
+      }
+    }
+  }
+  > span {
+    background-image: url("../image/date-join.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: #fff;
+    &.head:first-of-type {
+      background-size: 50% 100%;
+      background-position: 100% 0;
+      > div {
+        line-height: @itemWidth * 0.7;
+        height: @itemWidth * 0.7;
+        width: @itemWidth * 0.7;
+        background-color: #D8EDFF;
+      }
+    }
+    &.head:last-of-type {
+      &:first-of-type {
+        background-image: none;
+      }
+      background-size: 50% 100%;
+      background-position: 0 0;
+      > div {
+        line-height: @itemWidth * 0.7;
+        height: @itemWidth * 0.7;
+        width: @itemWidth * 0.7;
+        background-color: #D8EDFF;
+      }
+    }
+  }
+
+}
+
+.multi {
+  display: flex;
+  .calendar {
+    //margin-right: 5px;
+    &:last-child {
+      // margin-right: 0;
+    }
+  }
+  margin: 5px;
+}
