@@ -10,7 +10,6 @@ export default class  extends React.Component {
     	{year: 2016, 
     		month: 11,
     		hour:"00:00", 
-    		pos:0,
     		day:[],
     		tag:0,
     		shit:1,
@@ -23,7 +22,6 @@ export default class  extends React.Component {
     	hour:"00:00", 
     		pos:0,
     		day:[],
-    		pos:0,
     		tag:1,
     		shit:3,
     		showM: false,
@@ -53,7 +51,7 @@ export default class  extends React.Component {
     this.setState({mouseOver: date});
   }
 
-	previousMonth(year,month,tag,changeYear,showY,pos){
+	previousMonth(year,month,tag,changeYear,showY){
 		let stateCopy = Object.assign({},this.state);
 		stateCopy.calendar = stateCopy.calendar.slice();
 		stateCopy.calendar[tag] = Object.assign({},stateCopy.calendar[tag]);
@@ -61,8 +59,6 @@ export default class  extends React.Component {
 		stateCopy.calendar[tag].month = month;
 		stateCopy.calendar[tag].changeYear = changeYear;
 		stateCopy.calendar[tag].showY = showY;
-		stateCopy.calendar[tag].pos = pos;
-		
 		this.setState(stateCopy);
 	}
 	
@@ -79,7 +75,6 @@ timeChange(hour,tag){
 		stateCopy.calendar = stateCopy.calendar.slice();
 		stateCopy.calendar[tag] = Object.assign({},stateCopy.calendar[tag]);
 		stateCopy.calendar[tag].hour = hour;
-	
 		this.setState(stateCopy);
 }
 

@@ -4,6 +4,7 @@
 import React from 'react';
 import { findDOMNode } from 'react-dom'
 let date = new Date();
+console.log(date,"date3eee")
 function propsToState(props) {
   return {
     week: props.week || true,
@@ -330,10 +331,10 @@ showMonth(){
 	
 }
 changeM(e){
-	console.log(e.target.getAttribute('value'));
-	this.state.month = e.target.getAttribute('value')-1;
-	let { week, year, month, active, day, tag} = this.state;
-	this.setState({
+	if(e.target.getAttribute('value')){
+		this.state.month = e.target.getAttribute('value')-1;
+		let { week, year, month, active, day, tag} = this.state;
+		this.setState({
 			week: week,
 			year: year,
 			month: month,
@@ -343,6 +344,8 @@ changeM(e){
 		},()=>{
 			this.props.onPreviousMonth(year,month,tag);
 		})
+	}
+	
 	
 }
 showYear(){
@@ -479,7 +482,7 @@ componentDidUpdate(e) {
       	<p className="side" onClick={this.previousYear.bind(this)}>&lt;&lt;</p>
       	<p className="side" onClick={this.previousMonth.bind(this)}> &lt; </p>
     	<div className="cen">
-    	<a onClick={this.showYear.bind(this)}>{this.state.year}年</a>
+    	<p className="bind" onClick={this.showYear.bind(this)}>{this.state.year}年</p>
     	{this.state.showY ? <div className="show-year">
     	<p onClick={this.preY.bind(this)}> &lt; </p>
     	<div className="year">
@@ -489,7 +492,7 @@ componentDidUpdate(e) {
     	</div>
     	<p onClick={this.nextY.bind(this)}> &gt; </p>
     	</div>:null}
-    	<a onClick={this.showMonth.bind(this)}>{this.state.month+1}月</a>
+    	<p className="bind" onClick={this.showMonth.bind(this)}>{this.state.month+1}月</p>
     	{this.state.showM ? <div className="show-month" 
     						onClick={this.changeM.bind(this)}>
     	<span value="1">1月</span>

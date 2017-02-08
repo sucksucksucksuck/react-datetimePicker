@@ -1,9 +1,9 @@
 .calendar {
-  @itemWidth: 32px;
+  @itemWidth: 50px;
   display: flex;
   flex-wrap: wrap;
   width: @itemWidth * 7;
-  font-size: 12px;
+  font-size: 16px;
   position: relative;
   //border-bottom: #eee solid 1px;
   //border-right: #eee solid 1px;
@@ -39,7 +39,7 @@
                   position: absolute;
                   border: 1px solid red;
                   top:20px;
-                  left:40%;
+                  left:50%;
                   width: @itemWidth * 2;
                   text-align: center;
                   span {
@@ -49,12 +49,19 @@
                       background-color: #D8EDFF;
                   }
               }
+              .bind {
+                    float: left;
+                    width: @itemWidth * 2;
+                    margin: 0px auto;
+                    line-height: 8px;
+
+                  }
               .show-year {
                  background-color: #fff;
                   position: absolute;
                   border: 1px solid red;
                   top:20px;
-                  left:0;
+                  left:-26%;
                   width: @itemWidth * 4;
                  text-align: center;
                  > .year {
@@ -197,24 +204,26 @@
     }
   }
   .timeSelect {
+
        width:  @itemWidth * 2;
        margin-top: 20px;
        margin-bottom: 20px;
        .timepicker {
-           width: @itemWidth * 1.5;
+           height: @itemWidth / 1.5;
+           font-size: 20px;
+           width: @itemWidth * 2.5;
        }
   }
   
   .record {
-
       height: 50px;
-      width:  @itemWidth * 7;
-      line-height: 50px;
+      width:  @itemWidth * 8;
+      line-height: 60px;
       text-align: center;
-      margin-left: 10px;
+      margin-left: 28px;
       color: #333333;
-      font-weight: bold;
-      font-size: 17px;
+      font-weight: 600;
+      font-size: 20px;
   }
   margin: 5px;
 }
