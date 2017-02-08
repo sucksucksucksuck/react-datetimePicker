@@ -5,6 +5,7 @@
       flex-wrap: wrap;
   width: 224px;
   font-size: 12px;
+  position: relative;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -12,13 +13,107 @@
   cursor: default;
 }
 .calendar.week {
-  width: 256px;
+  width: 266px;
+  position: relative;
 }
 .calendar > div,
 .calendar span {
   width: 32px;
   text-align: center;
-  color: #999;
+  border-top: #eee solid 1px;
+  color: #000;
+}
+.calendar > div.history,
+.calendar span.history {
+  width: 256px;
+  text-align: center;
+}
+.calendar > div.history > p,
+.calendar span.history > p,
+.calendar > div.history div,
+.calendar span.history div {
+  display: inline-block;
+}
+.calendar > div.history .side,
+.calendar span.history .side {
+  width: 32px;
+}
+.calendar > div.history .cen,
+.calendar span.history .cen {
+  width: 128px;
+  position: relative;
+}
+.calendar > div.history .cen .show-month,
+.calendar span.history .cen .show-month {
+  color: red;
+  background-color: #fff;
+  position: absolute;
+  border: 1px solid red;
+  top: 20px;
+  left: 40%;
+  width: 64px;
+  text-align: center;
+}
+.calendar > div.history .cen .show-month span,
+.calendar span.history .cen .show-month span {
+  float: left;
+}
+.calendar > div.history .cen .show-month span:hover,
+.calendar span.history .cen .show-month span:hover {
+  background-color: #D8EDFF;
+}
+.calendar > div.history .cen .show-year,
+.calendar span.history .cen .show-year {
+  background-color: #fff;
+  position: absolute;
+  border: 1px solid red;
+  top: 20px;
+  left: 0;
+  width: 128px;
+  text-align: center;
+}
+.calendar > div.history .cen .show-year > .year,
+.calendar span.history .cen .show-year > .year {
+  width: 96px;
+}
+.calendar > div.history .cen .show-year p,
+.calendar span.history .cen .show-year p {
+  float: left;
+  margin: 8px 5px;
+}
+.calendar > div.history .cen .show-year p:last-child,
+.calendar span.history .cen .show-year p:last-child {
+  float: right;
+}
+.calendar > div.history .cen .show-year span,
+.calendar span.history .cen .show-year span {
+  float: left;
+}
+.calendar > div.history .cen .show-year p:hover,
+.calendar span.history .cen .show-year p:hover,
+.calendar > div.history .cen .show-year span:hover,
+.calendar span.history .cen .show-year span:hover {
+  background-color: #D8EDFF;
+}
+.calendar > div.history-view,
+.calendar span.history-view {
+  width: 256px;
+  border: 1px solid #333333;
+  height: 120px;
+  position: absolute;
+  background-color: #31B4E1;
+  color: #000;
+  top: 38px;
+  text-align: center;
+}
+.calendar > div.history-view .history-year,
+.calendar span.history-view .history-year {
+  color: #000;
+  width: 48px;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-left: 10px;
+  float: left;
 }
 .calendar > div.week-head,
 .calendar span.week-head {
@@ -120,4 +215,22 @@
   display: -ms-flexbox;
   display: flex;
   margin: 5px;
+}
+.multi .timeSelect {
+  width: 64px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.multi .timeSelect .timepicker {
+  width: 48px;
+}
+.multi .record {
+  height: 50px;
+  width: 224px;
+  line-height: 50px;
+  text-align: center;
+  margin-left: 10px;
+  color: #333333;
+  font-weight: bold;
+  font-size: 17px;
 }
